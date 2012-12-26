@@ -1,4 +1,4 @@
-# Gimme my NikeFuel
+# NikeFuel Scraper
 
 If you're like me, you feel real smug wearing a [FuelBand][fuelband] and
 wouldn't mind access to its data. Unfortunately, there's no easy way to do
@@ -17,7 +17,7 @@ value somehow.)
 
 This script extracts all your FuelBand data to a JSON file. The JSON file is a
 map of days (as JavaScript timestamps) to an array of Fuel. The array contains
-16 elements, one for each 15 minutes of the day. (Hey, that's even more
+96 elements, one for each 15 minutes of the day. (Hey, that's even more
 granular than the graphs on the app!)
 
 This is what it looks like:
@@ -130,7 +130,7 @@ Use with care.
 - [CasperJS](http://casperjs.org/)
     - [PhantomJS](http://phantomjs.org/)
 
-And a FuelBand and Nike+ account, of course.
+And a FuelBand and a Nike+ account, of course.
 
 ## Usage
 
