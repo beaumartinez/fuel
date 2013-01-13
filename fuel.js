@@ -95,6 +95,36 @@ var LOGIN_URL = 'http://nikeplus.nike.com/plus/';
             casper.then(waitForUrlChange);
         });
 
+        casper.then(function changeLocaleIfWrong() {
+            var localeText = casper.evaluate(function() {
+                var localeLink = document.querySelector('a#footer_region_link');
+                var localeText = localeLink.innerText;
+                localeText = toLowerCase();
+
+                return localeText;
+            });
+
+            if (localeText !== 'english') {
+                casper.click('a#footer_region_link');
+                casper.then(waitForUrlChange);
+
+                casper.then(function clickValidLocaleLink() {
+                    // Have to hover over "English" link to see all English locales
+                    casper.evaluate(function() {
+                        var link = document.querySelector('a[rel=english]');
+                        var event = document.createEvent('MouseEvents');
+                        event.initEvent('mouseover', true, false);
+                        link.dispatchEvent(event);
+                    });
+
+                    casper.waitUntilVisible('a[rel=en_GB]', function() {
+                        casper.click('a[rel=en_GB]');
+                    });
+                    casper.then(waitForUrlChange);
+                });
+            }
+        });
+
         casper.then(function clickActivityLink() {
             casper.click('a[title=Activity]');
 
