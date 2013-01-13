@@ -62,13 +62,11 @@ var LOGIN_URL = 'http://nikeplus.nike.com/plus/login/';
     }
 
     (function() {
-        casper.start(LOGIN_URL, function waitTillLoginFrameVisible() {
-            casper.waitUntilVisible('#checkers', function() {
-                frameName = casper.evaluate(function() {
-                    var frame = document.getElementById('checkers');
+        casper.start(LOGIN_URL, function getLoginFrameName() {
+            frameName = casper.evaluate(function() {
+                var frame = document.getElementById('checkers');
 
-                    return frame.name;
-                });
+                return frame.name;
             });
 
             currentUrl = casper.getCurrentUrl();
