@@ -14,7 +14,7 @@ var casper = require('casper').create({
 });
 var fs = require('fs');
 
-var LOGIN_URL = 'http://nikeplus.nike.com/plus/login/';
+var LOGIN_URL = 'http://nikeplus.nike.com/plus/';
 
 (function() {
     var currentUrl;
@@ -75,7 +75,7 @@ var LOGIN_URL = 'http://nikeplus.nike.com/plus/login/';
         casper.then(function submitLoginForm() {
             casper.withFrame(frameName, function() {
                 casper.evaluate(function(email, password) {
-                    var form = document.querySelector('#loginform form');
+                    var form = document.querySelector('form');
 
                     var emailNode = form.querySelector('input[type=email]');
                     emailNode.value = email;
