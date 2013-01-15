@@ -34,7 +34,7 @@ var LOGIN_URL = 'http://nikeplus.nike.com/plus/';
     function getData() {
         casper.then(function doShitWithData() {
             var date = casper.evaluate(function() {
-                return window.np.baked_data.activity.localStart.utcTime;
+                return window.np.baked_data.activity.localStart.localTime;
             });
 
             var data = casper.evaluate(function() {
