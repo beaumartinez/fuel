@@ -117,8 +117,9 @@ var LOGIN_URL = 'http://nikeplus.nike.com/plus/';
                         link.dispatchEvent(event);
                     });
 
-                    casper.waitUntilVisible('a[rel=en_GB]', function() {
-                        casper.click('a[rel=en_GB]');
+                    var validLocaleLinkSelector = 'a[rel=en_GB]';
+                    casper.waitUntilVisible(validLocaleLinkSelector, function() {
+                        casper.click(validLocaleLinkSelector);
                     });
                     casper.then(waitForUrlChange);
                 });
