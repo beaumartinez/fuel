@@ -141,6 +141,11 @@ And a FuelBand and a Nike+ account, of course.
 The web app is a bit buggy in places—I've seen it skip days (yes, the web
 app—not the scraper) when you click "previous".
 
+## Update
+
+It turns out [Nike will be offering an API][legit api].
+
 [api]: https://twitter.com/NikeFuel/status/205424488836370433
 [fuelband]: http://www.nike.com/us/en_us/lp/nikeplus-fuelband
+[legit api]: http://developer.nike.com/resources
 [web app]: http://nikeplus.nike.com/plus/
