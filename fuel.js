@@ -132,12 +132,6 @@ var LOGIN_URL = 'http://nikeplus.nike.com/plus/';
             casper.then(waitForUrlChange);
         });
 
-        casper.then(function clickMonthLink() {
-            casper.click('a.month');
-
-            casper.then(waitForUrlChange);
-        });
-
         casper.then(function clickLastSyncBar() {
             casper.evaluate(function() {
                 var links = document.querySelectorAll('a.bar_shim');
